@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: demo-cip-service-02
+  labels:
+    app: demo-ingress-02
+spec:
+  selector:
+    app: demo-ingress-02
+  ports:
+    - port: 80
+      targetPort: 80

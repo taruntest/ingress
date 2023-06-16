@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: demo-ingress-service-02
+spec:
+  type: LoadBalancer
+  selector:
+    app: demo-ingress-02
+  ports:
+  - port: 80

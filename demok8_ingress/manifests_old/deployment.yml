@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: demo-ingress-deploy-01
+spec:
+  selector:
+    matchLabels:
+      app: demo-ingress-01
+  template:
+    metadata:
+      labels:
+        app: demo-ingress-01
+    spec:
+      containers:
+      - name: demo-ingress-01
+        image: demok8acr.azurecr.io/demok8_ingress:31
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "50m"
+        ports:
+        - containerPort: 80
